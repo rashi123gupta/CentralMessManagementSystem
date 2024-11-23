@@ -3,7 +3,6 @@ const Schema = mongoose.Schema;
 const bcrypt = require('bcrypt');
 const { isEmail } = require('validator');
 
-
 const userSchema = new Schema({
     fullname: {
         type: String,
@@ -66,8 +65,6 @@ userSchema.statics.login = async function (username, password , role) {
     }
     throw Error('incorrect username');
 }
-
-
 
 const User = mongoose.model('User', userSchema);
 module.exports = User;
